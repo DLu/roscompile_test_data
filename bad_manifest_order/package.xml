@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package>
+  <version>0.0.0</version>
+  <buildtool_depend>catkin</buildtool_depend>
+  <maintainer email="dlu@todo.todo">dlu</maintainer>
+  <description>The default_package package</description>
+  <license>TODO</license>
+  <name>minimal_package</name>
+</package>

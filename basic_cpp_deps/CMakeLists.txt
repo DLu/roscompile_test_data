@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(minimal_package)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs tf)
+catkin_package(CATKIN_DEPENDS roscpp std_msgs tf)
+add_executable(node src/node.cpp)

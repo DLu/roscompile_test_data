@@ -1,0 +1,230 @@
+ - in: default_package
+   out: default_remove_comments
+   functions:
+       - remove_boilerplate_manifest_comments
+       - remove_boilerplate_cmake_comments
+ - in: default_package
+   out: default_no_export
+   function: remove_empty_export_tag
+ - in: minimal_package
+   out: minimal_package
+   function: remove_empty_export_tag
+ - in: useless_export
+   out: useless_export
+   function: remove_empty_export_tag
+ - in: bad_tabbing
+   out: minimal_package
+   function: enforce_manifest_tabbing
+ - in: bad_manifest_order
+   out: minimal_package
+   function: enforce_manifest_ordering
+ - in: empty_lines
+   out: fixed_empty_lines
+   functions:
+       - remove_empty_manifest_lines
+       - remove_empty_cmake_lines
+ - in: basic_cpp
+   out: basic_cpp_deps
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+ - in: basic_cpp_deps
+   out: basic_cpp_deps
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+ - in: simple_msg
+   out: fixed_simple_msg
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: fixed_simple_msg
+   out: fixed_simple_msg
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: simple_gen
+   out: fixed_simple_gen
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: fixed_simple_gen
+   out: fixed_simple_gen
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: minimal_package
+   out: fixed_include
+   function: check_includes
+ - in: basic_cpp
+   out: fixed_include2
+   function: check_includes
+ - in: basic_cpp_with_include
+   out: fixed_include3
+   function: check_includes
+ - in: broken_metapackage
+   out: fixed_metapackage
+   function: update_metapackage
+   subpkg: broken_metapackage
+ - in: minimal_package2
+   out: minimal_package_greedy
+   function: greedy_depend_tag
+ - in: minimal_package
+   out: minimal_package
+   function: greedy_depend_tag
+ - in: basic_cpp
+   out: basic_cpp_catkin_libs
+   function: target_catkin_libraries
+ - in: basic_cpp_catkin_libs
+   out: basic_cpp_catkin_libs
+   function: target_catkin_libraries
+ - in: broken_target
+   out: basic_cpp_catkin_libs
+   function: target_catkin_libraries
+ - in: plugin_package
+   out: fixed_library
+   function: check_library_setup
+ - in: basic_cpp
+   out: basic_cpp
+   function: check_library_setup
+ - in: plugin_package
+   out: fixed_plugins
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_plugins
+ - in: fixed_plugins
+   out: fixed_plugins
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_plugins
+ - in: basic_cpp
+   out: fixed_message_dep
+   function: check_exported_dependencies
+ - in: basic_cpp_no_msg
+   out: basic_cpp_no_msg
+   function: check_exported_dependencies
+ - in: simple_msg_ex
+   out: fixed_simple_msg_ex
+   functions:
+       - check_generators
+       - check_exported_dependencies
+ - in: simple_msg_lib
+   out: fixed_simple_msg_lib
+   function: check_exported_dependencies
+ - in: simple_msg_var
+   out: simple_msg_var
+   function: check_exported_dependencies
+ - in: mainpage
+   out: fixed_mainpage
+   function: remove_useless_files
+ - in: minimal_python
+   out: fixed_minimal_python
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - update_python_installs
+ - in: fixed_minimal_python
+   out: fixed_minimal_python
+   functions:
+       - check_includes
+       - check_setup_py
+ - in: py_lib
+   out: fixed_py_lib
+   function: check_setup_py
+ - in: existing_py_lib
+   out: existing_py_lib
+   function: check_setup_py
+ - in: basic_cpp
+   out: basic_cpp
+   function: check_dynamic_reconfigure
+ - in: reconfig
+   out: fixed_reconfig
+   functions:
+       - check_manifest_dependencies
+       - check_dynamic_reconfigure
+       - check_exported_dependencies
+ - in: reconfig2
+   out: fixed_reconfig2
+   functions:
+       - check_dynamic_reconfigure
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_exported_dependencies
+ - in: basic_cpp
+   out: basic_cpp_with_install
+   function: update_cplusplus_installs
+ - in: basic_cpp_with_include
+   out: basic_cpp_with_installed_include
+   function: update_cplusplus_installs
+ - in: plugin_package
+   out: installed_library
+   function: update_cplusplus_installs
+ - in: misc_install
+   out: fixed_misc_install
+   function: update_misc_installs
+ - in: fixed_misc_install
+   out: fixed_misc_install
+   function: update_misc_installs
+ - in: legacy_simple_msg_ex
+   out: fixed_legacy_export
+   function: remove_old_style_cpp_dependencies
+ - in: fixed_legacy_export
+   out: fixed_legacy_export
+   function: remove_old_style_cpp_dependencies
+ - in: fixed_legacy_export
+   out: fixed_legacy_export
+   functions:
+       - check_exported_dependencies
+       - remove_old_style_cpp_dependencies
+ - in: good_cmake_order
+   out: good_cmake_order
+   function: enforce_cmake_ordering
+ - in: bad_cmake_order
+   out: good_cmake_order
+   function: enforce_cmake_ordering
+ - in: basic_cpp
+   out: fixed_name_license
+   functions:
+       - update_people
+       - update_license
+   config:
+       default_license: Proprietary
+       replace_rules:
+        - from:
+            email: dlu@todo.todo
+            name: dlu
+          to:
+            email: davidvlu@gmail.com
+            name: David V. Lu!!
+ - in: basic_cpp
+   out: fixed_name_license
+   functions:
+       - update_people
+       - update_license
+   config:
+       default_license: Proprietary
+       replace_rules:
+        - from:
+            email: dlu@todo.todo
+          to:
+            email: davidvlu@gmail.com
+            name: David V. Lu!!
+ - in: basic_cpp
+   out: fixed_name_license
+   functions:
+       - update_people
+       - update_license
+   config:
+       default_license: Proprietary
+       replace_rules:
+        - from:
+            name: dlu
+          to:
+            email: davidvlu@gmail.com
+            name: David V. Lu!!
