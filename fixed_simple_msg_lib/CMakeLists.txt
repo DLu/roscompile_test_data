@@ -5,4 +5,4 @@ find_package(catkin REQUIRED)
 
 catkin_package()
 add_library(the_library src/lib.cpp)
-add_dependencies(the_library ${simple_msg_lib_EXPORTED_TARGETS})
+add_dependencies(the_library ${simple_msg_EXPORTED_TARGETS})

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>minimal_package</name>
+  <name>py_lib</name>
   <version>0.0.0</version>
   <description>The default_package package</description>
   <maintainer email="dlu@todo.todo">dlu</maintainer>

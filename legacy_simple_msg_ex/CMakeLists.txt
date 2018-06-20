@@ -15,4 +15,4 @@ add_executable(node4 src/node.cpp)
 add_dependencies(node4 ${catkin_EXPORTED_TARGETS} legacy_simple_msg_ex_gencpp)
 
 add_executable(node5 src/node.cpp)
-add_dependencies(node5 ${catkin_EXPORTED_TARGETS} ${PKG_NAME}_generate_messages_cpp ${legacy_simple_msg_ex_EXPORTED_TARGETS})
+add_dependencies(node5 ${catkin_EXPORTED_TARGETS} ${PKG_NAME}_generate_messages_cpp ${simple_msg_ex_EXPORTED_TARGETS})

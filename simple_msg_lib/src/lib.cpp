@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include <simple_msg_lib/Simple.h>
+#include <simple_msg/Simple.h>
 
 class Awesome
 {
