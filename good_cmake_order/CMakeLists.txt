@@ -10,6 +10,8 @@ generate_dynamic_reconfigure_options()
 generate_messages()
 catkin_package()
 
+include_directories()
+
 add_library(library src/library.cpp)
 add_dependencies(library ${catkin_EXPORTED_TARGETS})
 target_link_libraries(library ${catkin_LIBRARIES})
@@ -17,8 +19,6 @@ target_link_libraries(library ${catkin_LIBRARIES})
 add_executable(node src/node.cpp)
 add_dependencies(node ${catkin_EXPORTED_TARGETS})
 target_link_libraries(node ${catkin_LIBRARIES})
-
-include_directories()
 
 if(CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
