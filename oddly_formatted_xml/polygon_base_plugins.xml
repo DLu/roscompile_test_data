@@ -1,0 +1,5 @@
+<library path="lib/libthe_library">
+  <class   type="polygon_plugins::Triangle" base_class_type="polygon_base::RegularPolygon">
+    <description></description>
+  </class>
+</library>

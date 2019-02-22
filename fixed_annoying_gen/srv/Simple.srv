@@ -1,0 +1,7 @@
+# This has comments
+geometry_msgs/Twist and_shout # in all sorts of wacky places
+float64 kirby
+    # including oddly indented ones
+---
+# there are also carriage returns because why not
+float64 deedeedee
