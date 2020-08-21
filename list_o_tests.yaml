@@ -210,12 +210,25 @@
    functions:
        - check_exported_dependencies
        - remove_old_style_cpp_dependencies
- - in: good_cmake_order
-   out: good_cmake_order
-   function: enforce_cmake_ordering
  - in: bad_cmake_order
    out: good_cmake_order
    function: enforce_cmake_ordering
+ - in: good_cmake_order
+   out: good_cmake_order
+   function: enforce_cmake_ordering
+ - in: good_cmake_order_styled
+   out: good_cmake_order_styled
+   function: enforce_cmake_ordering
+ - in: good_cmake_order
+   out: good_cmake_order_styled
+   function: enforce_cmake_ordering
+   config:
+       cmake_style: install_first
+ - in: good_cmake_order_styled
+   out: good_cmake_order
+   function: enforce_cmake_ordering
+   config:
+       cmake_style: test_first
  - in: basic_cpp
    out: fixed_name_license
    functions:
@@ -256,3 +269,6 @@
           to:
             email: davidvlu@gmail.com
             name: David V. Lu!!
+ - in: missing_msg_names
+   out: fixed_msg_names
+   function: fill_in_msg_package_names
