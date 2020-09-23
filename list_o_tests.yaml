@@ -63,6 +63,11 @@
        - check_manifest_dependencies
        - check_cmake_dependencies
        - check_generators
+ - in: insertion_order
+   out: fixed_insertion_order
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
  - in: minimal_package
    out: fixed_include
    function: check_includes
