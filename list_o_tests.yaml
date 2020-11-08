@@ -201,6 +201,11 @@
  - in: fixed_misc_install
    out: fixed_misc_install
    function: update_misc_installs
+ - in: urdf_dependencies
+   out: fixed_urdf_dependencies
+   functions:
+       - check_manifest_dependencies
+       - update_misc_installs
  - in: directory_install
    out: fixed_directory_install
    function: fix_double_directory_installs
