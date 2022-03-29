@@ -286,3 +286,9 @@
  - in: missing_msg_names
    out: fixed_msg_names
    function: fill_in_msg_package_names
+ - in: rviz_package
+   out: fixed_rviz_package
+   functions:
+       - update_misc_installs
+       - check_manifest_dependencies
+       - clean_up_rviz_configs
