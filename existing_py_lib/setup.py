@@ -5,7 +5,7 @@ from catkin_pkg.python_setup import generate_distutils_setup
 
 package_info = generate_distutils_setup(
     packages=['existing_py_lib'],
-    package_dir={'': 'src'}
+    package_dir={'': 'src'},
 )
 
 setup(**package_info)
