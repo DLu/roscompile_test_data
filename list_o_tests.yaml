@@ -1,1 +1,176 @@
-[]
+ - in: default_package
+   out: default_remove_comments
+   functions:
+       - remove_boilerplate_manifest_comments
+       - remove_boilerplate_cmake_comments
+ - in: bad_tabbing
+   out: minimal_package
+   function: enforce_manifest_tabbing
+ - in: bad_manifest_order
+   out: minimal_package
+   function: enforce_manifest_ordering
+ - in: empty_lines
+   out: fixed_empty_lines
+   functions:
+       - remove_empty_manifest_lines
+       - remove_empty_cmake_lines
+ - in: basic_cpp
+   out: basic_cpp_deps
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+ - in: basic_cpp_deps
+   out: basic_cpp_deps
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+ - in: simple_msg
+   out: fixed_simple_msg
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: fixed_simple_msg
+   out: fixed_simple_msg
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: simple_gen
+   out: fixed_simple_gen
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: fixed_simple_gen
+   out: fixed_simple_gen
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: annoying_gen
+   out: fixed_annoying_gen
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+ - in: insertion_order
+   out: fixed_insertion_order
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+ - in: minimal_package
+   out: minimal_package
+   function: check_includes
+ - in: basic_cpp
+   out: fixed_include2
+   function: check_includes
+ - in: basic_cpp_with_include
+   out: fixed_include3
+   function: check_includes
+ - in: minimal_package2
+   out: minimal_package_greedy
+   function: greedy_depend_tag
+ - in: minimal_package
+   out: minimal_package
+   function: greedy_depend_tag
+ - in: basic_cpp
+   out: basic_cpp_catkin_libs
+   function: target_catkin_libraries
+ - in: basic_cpp_catkin_libs
+   out: basic_cpp_catkin_libs
+   function: target_catkin_libraries
+ - in: broken_target
+   out: basic_cpp_catkin_libs
+   function: target_catkin_libraries
+ - in: plugin_package
+   out: fixed_plugins
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_plugins
+   pkgs:
+       - pluginlib_tutorials
+ - in: fixed_plugins
+   out: fixed_plugins
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_plugins
+ - in: oddly_formatted_xml
+   out: oddly_formatted_xml
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_plugins
+ - in: oddly_formatted_xml
+   out: fixed_plugins
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_plugins
+       - misc_xml_formatting
+ - in: minimal_python
+   out: fixed_minimal_python
+   functions:
+     - check_setup_py
+     - check_python_marker
+     - update_misc_installs
+ - in: fixed_minimal_python
+   out: fixed_minimal_python
+   functions:
+     - check_setup_py
+     - check_python_marker
+     - update_misc_installs
+     - update_python_installs
+ - in: min_py_script
+   out: fixed_min_py_script
+   functions:
+     - check_setup_py
+     - check_python_marker
+     - update_misc_installs
+     - update_python_installs
+ - in: fixed_min_py_script
+   out: fixed_min_py_script
+   functions:
+     - check_setup_py
+     - check_python_marker
+     - update_misc_installs
+     - update_python_installs
+ - in: py_lib
+   out: fixed_py_lib
+   functions:
+     - check_setup_py
+     - check_python_marker
+     - update_misc_installs
+     - update_python_installs
+ - in: fixed_py_lib
+   out: fixed_py_lib
+   functions:
+     - check_setup_py
+     - check_python_marker
+     - update_misc_installs
+     - update_python_installs
+ - in: py_src_lib
+   out: fixed_py_src_lib
+   functions:
+     - check_setup_py
+     - check_python_marker
+     - update_misc_installs
+     - update_python_installs
+ - in: fixed_py_src_lib
+   out: fixed_py_src_lib
+   functions:
+     - check_setup_py
+     - check_python_marker
+     - update_misc_installs
+     - update_python_installs
+ - in: basic_cpp
+   out: basic_cpp_with_install
+   function: update_cplusplus_installs
+ - in: basic_cpp_with_include
+   out: basic_cpp_with_installed_include
+   function: update_cplusplus_installs
+ - in: plugin_package
+   out: installed_library
+   function: update_cplusplus_installs

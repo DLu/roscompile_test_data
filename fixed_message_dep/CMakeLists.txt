@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.8)
+project(minimal_package)
+find_package(ament_cmake REQUIRED)
+add_executable(node src/node.cpp)
+add_dependencies(node ${catkin_EXPORTED_TARGETS})
+ament_package()
