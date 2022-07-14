@@ -1,0 +1,10 @@
+<!-- This is not a valid urdf file and the linked mesh/launch file doesn't exist,
+     but roscompile should still find the dependencies -->
+<link name="left_gripper">
+    <visual>
+      <geometry>
+        <mesh filename="package://geometry_msgs/meshes/l_finger.dae"/>
+      </geometry>
+    </visual>
+</link>
+<xacro:include filename="$(find stereo_msgs)/other_file.xacro" />

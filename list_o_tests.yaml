@@ -19,6 +19,7 @@
    functions:
        - check_manifest_dependencies
        - check_cmake_dependencies
+   pkgs: [rclcpp, std_msgs, tf2_ros]
  - in: basic_cpp_deps
    out: basic_cpp_deps
    functions:
@@ -59,6 +60,7 @@
    functions:
        - check_manifest_dependencies
        - check_cmake_dependencies
+   pkgs: [actionlib_msgs, geometry_msgs, rclcpp, sensor_msgs, stereo_msgs]
  - in: minimal_package
    out: minimal_package
    function: check_includes
@@ -77,12 +79,14 @@
  - in: basic_cpp
    out: basic_cpp_catkin_libs
    function: target_catkin_libraries
+   pkgs: [rclcpp, std_msgs, tf2_ros]
  - in: basic_cpp_catkin_libs
    out: basic_cpp_catkin_libs
    function: target_catkin_libraries
  - in: broken_target
    out: basic_cpp_catkin_libs
    function: target_catkin_libraries
+   pkgs: [rclcpp, std_msgs, tf2_ros]
  - in: plugin_package
    out: fixed_plugins
    functions:
@@ -90,6 +94,7 @@
        - check_cmake_dependencies
        - check_plugins
    pkgs:
+       - pluginlib
        - pluginlib_tutorials
  - in: fixed_plugins
    out: fixed_plugins
@@ -174,3 +179,88 @@
  - in: plugin_package
    out: installed_library
    function: update_cplusplus_installs
+ - in: misc_install
+   out: fixed_misc_install
+   function: update_misc_installs
+ - in: fixed_misc_install
+   out: fixed_misc_install
+   function: update_misc_installs
+ - in: urdf_dependencies
+   out: fixed_urdf_dependencies
+   functions:
+       - check_manifest_dependencies
+       - update_misc_installs
+   pkgs:
+       - geometry_msgs
+       - stereo_msgs
+ - in: directory_install
+   out: fixed_directory_install
+   function: fix_double_directory_installs
+ - in: bad_cmake_order
+   out: good_cmake_order
+   function: enforce_cmake_ordering
+ - in: good_cmake_order
+   out: good_cmake_order
+   function: enforce_cmake_ordering
+ - in: good_cmake_order_styled
+   out: good_cmake_order_styled
+   function: enforce_cmake_ordering
+ - in: good_cmake_order
+   out: good_cmake_order_styled
+   function: enforce_cmake_ordering
+   config:
+       cmake_style: install_first
+ - in: good_cmake_order_styled
+   out: good_cmake_order
+   function: enforce_cmake_ordering
+   config:
+       cmake_style: test_first
+ - in: basic_cpp
+   out: fixed_name_license
+   functions:
+       - update_people
+       - update_license
+   config:
+       default_license: Proprietary
+       replace_rules:
+        - from:
+            email: dlu@todo.todo
+            name: dlu
+          to:
+            email: davidvlu@gmail.com
+            name: David V. Lu!!
+ - in: basic_cpp
+   out: fixed_name_license
+   functions:
+       - update_people
+       - update_license
+   config:
+       default_license: Proprietary
+       replace_rules:
+        - from:
+            email: dlu@todo.todo
+          to:
+            email: davidvlu@gmail.com
+            name: David V. Lu!!
+ - in: basic_cpp
+   out: fixed_name_license
+   functions:
+       - update_people
+       - update_license
+   config:
+       default_license: Proprietary
+       replace_rules:
+        - from:
+            name: dlu
+          to:
+            email: davidvlu@gmail.com
+            name: David V. Lu!!
+ - in: missing_msg_names
+   out: fixed_msg_names
+   function: fill_in_msg_package_names
+ - in: rviz_package
+   out: fixed_rviz_package
+   functions:
+       - update_misc_installs
+       - check_manifest_dependencies
+       - clean_up_rviz_configs

@@ -1,0 +1,44 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(minimal_package)
+rosidl_generate_interfaces()
+ament_export_include_directories(include)
+
+install()
+find_package(std_msgs REQUIRED)
+set_directory_properties(PROPERTIES COMPILE_OPTIONS "-std=c++11;-Wall;-Werror")
+ament_python_install_package(${PROJECT_NAME})
+ament_package()
+
+add_library(library src/library.cpp)
+
+add_executable(node src/node.cpp)
+ament_target_dependencies(node rclcpp)
+pluginlib_export_plugin_description_file(polygon_base polygon_base_plugins.xml)
+ament_target_dependencies(library std_msgs)
+
+target_include_directories(node x)
+find_package(rclcpp REQUIRED)
+ament_export_dependencies(rosidl_default_runtime)
+
+if(BUILD_TESTING)
+  find_package(rostest REQUIRED)
+
+  add_executable(etest test/etest.cpp)
+  find_package(ament_lint_auto REQUIRED)
+  add_rostest(test/etest.launch)
+  set(ament_cmake_copyright_FOUND TRUE)
+  target_link_libraries(etest ${GTEST_LIBRARIES})
+  set(ament_cmake_cpplint_FOUND TRUE)
+
+  ament_lint_auto_find_test_dependencies()
+
+  catkin_add_gtest(vtest test/vtest.cpp)
+endif()
+ament_export_targets(export_the_library)
+add_compile_options(-Wall -Wextra -Wpedantic)
+find_package(ament_cmake REQUIRED)
+ament_python_install_module()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
