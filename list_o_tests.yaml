@@ -264,3 +264,27 @@
        - update_misc_installs
        - check_manifest_dependencies
        - clean_up_rviz_configs
+ - in: my_cpp_py_pkg
+   out: fixed_cpp_py_pkg
+   functions:
+     - check_manifest_dependencies
+     - check_cmake_dependencies
+     - update_cplusplus_installs
+     - check_setup_py
+     - check_python_marker
+     - generate_ament_cmake_python_entry_points
+     - update_misc_installs
+     - update_python_installs
+   pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
+ - in: fixed_cpp_py_pkg
+   out: fixed_cpp_py_pkg
+   functions:
+     - check_manifest_dependencies
+     - check_cmake_dependencies
+     - update_cplusplus_installs
+     - check_setup_py
+     - check_python_marker
+     - generate_ament_cmake_python_entry_points
+     - update_misc_installs
+     - update_python_installs
+   pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
