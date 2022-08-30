@@ -185,6 +185,9 @@
  - in: fixed_misc_install
    out: fixed_misc_install
    function: update_misc_installs
+ - in: add_misc_install
+   out: fixed_add_misc_install
+   function: update_misc_installs
  - in: urdf_dependencies
    out: fixed_urdf_dependencies
    functions:
