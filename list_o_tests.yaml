@@ -288,3 +288,14 @@
      - update_misc_installs
      - update_python_installs
    pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
+ - in: license_test
+   out: fixed_license_test
+   function: check_license_file
+   subpkg: minimal_package
+   config:
+       year: 2055
+       copyright_holder: Metro Robots
+ - in: fixed_license_test
+   out: fixed_license_test
+   function: check_license_file
+   subpkg: minimal_package
