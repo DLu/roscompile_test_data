@@ -188,8 +188,14 @@
  - in: add_misc_install
    out: fixed_add_misc_install
    function: update_misc_installs
+ - in: add_many_misc_installs
+   out: fixed_many_misc_installs
+   function: update_misc_installs
  - in: add_misc_py_install
    out: fixed_add_misc_py_install
+   function: update_misc_installs
+ - in: add_many_misc_py_installs
+   out: fixed_many_misc_py_installs
    function: update_misc_installs
  - in: urdf_dependencies
    out: fixed_urdf_dependencies
