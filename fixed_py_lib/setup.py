@@ -10,6 +10,6 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/ament_index/resource_index/packages', ['resource/min_py_lib']),
     ],
-    packages=['min_py_lib'],
+    packages=[package_name],
     entry_points={'console_scripts': ['rex = min_py_lib.rex:main']},
 )

@@ -10,7 +10,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/ament_index/resource_index/packages', ['resource/min_py_src_lib']),
     ],
-    packages=['min_py_src_lib'],
+    packages=[package_name],
     package_dir={'': 'src'},
     entry_points={'console_scripts': ['rex = min_py_src_lib.rex:main']},
 )
