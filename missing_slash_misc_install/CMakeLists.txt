@@ -3,7 +3,7 @@ project(minimal_package)
 find_package(catkin REQUIRED)
 catkin_package()
 install(FILES c3po.urdf core.launch
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 install(FILES launch/test.launch
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
