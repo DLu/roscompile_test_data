@@ -6,5 +6,7 @@ install(TARGETS the_library
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin
+        EXPORT export_the_library
 )
+ament_export_targets(export_the_library)
 ament_package()

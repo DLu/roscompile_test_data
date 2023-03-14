@@ -93,6 +93,7 @@
        - check_manifest_dependencies
        - check_cmake_dependencies
        - check_plugins
+       - update_cplusplus_installs
    pkgs:
        - pluginlib
        - pluginlib_tutorials
@@ -102,6 +103,7 @@
        - check_manifest_dependencies
        - check_cmake_dependencies
        - check_plugins
+       - update_cplusplus_installs
  - in: oddly_formatted_xml
    out: oddly_formatted_xml
    functions:
@@ -177,6 +179,9 @@
    out: basic_cpp_with_installed_include
    function: update_cplusplus_installs
  - in: plugin_package
+   out: installed_library
+   function: update_cplusplus_installs
+ - in: installed_library
    out: installed_library
    function: update_cplusplus_installs
  - in: misc_install
