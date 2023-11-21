@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 2.8.3)
 project(minimal_package)
 rosidl_generate_interfaces()
 ament_export_include_directories(include)
-
 install()
 find_package(std_msgs REQUIRED)
 set_directory_properties(PROPERTIES COMPILE_OPTIONS "-std=c++11;-Wall;-Werror")

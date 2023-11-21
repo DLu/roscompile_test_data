@@ -92,8 +92,8 @@
    functions:
        - check_manifest_dependencies
        - check_cmake_dependencies
-       - check_plugins
        - update_cplusplus_installs
+       - check_plugins
    pkgs:
        - pluginlib
        - pluginlib_tutorials
@@ -130,6 +130,10 @@
      - check_python_marker
      - update_misc_installs
      - update_python_installs
+ - in: fixed_minimal_python
+   out: fixed_minimal_python
+   functions:
+     - check_plugins
  - in: min_py_script
    out: fixed_min_py_script
    functions:
@@ -316,3 +320,12 @@
    out: fixed_license_test
    function: check_license_file
    subpkg: minimal_package
+ - in: launch_dependencies
+   out: fixed_launch_dependencies
+   function: check_manifest_dependencies
+   packages:
+   - donatello
+   - raphael
+   - leonardo
+   - michelangelo
+   - xacro

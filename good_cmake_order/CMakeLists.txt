@@ -35,12 +35,11 @@ if(BUILD_TESTING)
 
   ament_lint_auto_find_test_dependencies()
 endif()
-
+ament_export_targets(export_the_library)
 install()
 ament_python_install_module()
 ament_python_install_package(${PROJECT_NAME})
 ament_export_include_directories(include)
 ament_export_dependencies(rosidl_default_runtime)
-ament_export_targets(export_the_library)
 pluginlib_export_plugin_description_file(polygon_base polygon_base_plugins.xml)
 ament_package()
