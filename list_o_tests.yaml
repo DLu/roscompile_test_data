@@ -37,6 +37,13 @@
        - check_manifest_dependencies
        - check_cmake_dependencies
        - check_generators
+ - in: complex_interfaces
+   out: fixed_complex_interfaces
+   functions:
+       - check_manifest_dependencies
+       - check_cmake_dependencies
+       - check_generators
+       - clean_whitespace_from_interface_definition
  - in: simple_gen
    out: fixed_simple_gen
    functions:
@@ -93,6 +100,7 @@
        - check_manifest_dependencies
        - check_cmake_dependencies
        - update_cplusplus_installs
+       - export_cplusplus_libraries
        - check_plugins
    pkgs:
        - pluginlib
@@ -104,6 +112,7 @@
        - check_cmake_dependencies
        - check_plugins
        - update_cplusplus_installs
+       - export_cplusplus_libraries
  - in: oddly_formatted_xml
    out: oddly_formatted_xml
    functions:
@@ -184,10 +193,14 @@
    function: update_cplusplus_installs
  - in: plugin_package
    out: installed_library
-   function: update_cplusplus_installs
+   functions:
+   - update_cplusplus_installs
+   - export_cplusplus_libraries
  - in: installed_library
    out: installed_library
-   function: update_cplusplus_installs
+   functions:
+   - update_cplusplus_installs
+   - export_cplusplus_libraries
  - in: misc_install
    out: fixed_misc_install
    function: update_misc_installs
@@ -291,6 +304,7 @@
      - check_manifest_dependencies
      - check_cmake_dependencies
      - update_cplusplus_installs
+     - export_cplusplus_libraries
      - check_setup_py
      - check_python_marker
      - generate_ament_cmake_python_entry_points
@@ -303,6 +317,7 @@
      - check_manifest_dependencies
      - check_cmake_dependencies
      - update_cplusplus_installs
+     - export_cplusplus_libraries
      - check_setup_py
      - check_python_marker
      - generate_ament_cmake_python_entry_points
