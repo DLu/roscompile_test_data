@@ -1,346 +1,346 @@
- - in: default_package
-   out: default_remove_comments
-   functions:
-       - remove_boilerplate_manifest_comments
-       - remove_boilerplate_cmake_comments
- - in: bad_tabbing
-   out: minimal_package
-   function: enforce_manifest_tabbing
- - in: bad_manifest_order
-   out: minimal_package
-   function: enforce_manifest_ordering
- - in: empty_lines
-   out: fixed_empty_lines
-   functions:
-       - remove_empty_manifest_lines
-       - remove_empty_cmake_lines
- - in: basic_cpp
-   out: basic_cpp_deps
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-   pkgs: [rclcpp, std_msgs, tf2_ros]
- - in: basic_cpp_deps
-   out: basic_cpp_deps
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
- - in: simple_msg
-   out: fixed_simple_msg
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_generators
- - in: fixed_simple_msg
-   out: fixed_simple_msg
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_generators
- - in: complex_interfaces
-   out: fixed_complex_interfaces
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_generators
-       - clean_whitespace_from_interface_definition
- - in: simple_gen
-   out: fixed_simple_gen
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_generators
- - in: fixed_simple_gen
-   out: fixed_simple_gen
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_generators
- - in: annoying_gen
-   out: fixed_annoying_gen
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_generators
- - in: insertion_order
-   out: fixed_insertion_order
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-   pkgs: [actionlib_msgs, geometry_msgs, rclcpp, sensor_msgs, stereo_msgs]
- - in: minimal_package
-   out: minimal_package
-   function: check_includes
- - in: basic_cpp
-   out: fixed_include2
-   function: check_includes
- - in: basic_cpp_with_include
-   out: fixed_include3
-   function: check_includes
- - in: minimal_package2
-   out: minimal_package_greedy
-   function: greedy_depend_tag
- - in: minimal_package
-   out: minimal_package
-   function: greedy_depend_tag
- - in: basic_cpp
-   out: basic_cpp_catkin_libs
-   function: target_catkin_libraries
-   pkgs: [rclcpp, std_msgs, tf2_ros]
- - in: basic_cpp_catkin_libs
-   out: basic_cpp_catkin_libs
-   function: target_catkin_libraries
- - in: broken_target
-   out: basic_cpp_catkin_libs
-   function: target_catkin_libraries
-   pkgs: [rclcpp, std_msgs, tf2_ros]
- - in: plugin_package
-   out: fixed_plugins
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - update_cplusplus_installs
-       - export_cplusplus_libraries
-       - check_plugins
-   pkgs:
-       - pluginlib
-       - pluginlib_tutorials
- - in: fixed_plugins
-   out: fixed_plugins
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_plugins
-       - update_cplusplus_installs
-       - export_cplusplus_libraries
- - in: oddly_formatted_xml
-   out: oddly_formatted_xml
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_plugins
- - in: oddly_formatted_xml
-   out: fixed_plugins
-   functions:
-       - check_manifest_dependencies
-       - check_cmake_dependencies
-       - check_plugins
-       - misc_xml_formatting
- - in: minimal_python
-   out: fixed_minimal_python
-   functions:
-     - check_setup_py
-     - check_python_marker
-     - update_misc_installs
- - in: fixed_minimal_python
-   out: fixed_minimal_python
-   functions:
-     - check_setup_py
-     - check_python_marker
-     - update_misc_installs
-     - update_python_installs
- - in: fixed_minimal_python
-   out: fixed_minimal_python
-   functions:
-     - check_plugins
- - in: min_py_script
-   out: fixed_min_py_script
-   functions:
-     - check_setup_py
-     - check_python_marker
-     - update_misc_installs
-     - update_python_installs
- - in: fixed_min_py_script
-   out: fixed_min_py_script
-   functions:
-     - check_setup_py
-     - check_python_marker
-     - update_misc_installs
-     - update_python_installs
- - in: py_lib
-   out: fixed_py_lib
-   functions:
-     - check_setup_py
-     - check_python_marker
-     - update_misc_installs
-     - update_python_installs
- - in: fixed_py_lib
-   out: fixed_py_lib
-   functions:
-     - check_setup_py
-     - check_python_marker
-     - update_misc_installs
-     - update_python_installs
- - in: py_src_lib
-   out: fixed_py_src_lib
-   functions:
-     - check_setup_py
-     - check_python_marker
-     - update_misc_installs
-     - update_python_installs
- - in: fixed_py_src_lib
-   out: fixed_py_src_lib
-   functions:
-     - check_setup_py
-     - check_python_marker
-     - update_misc_installs
-     - update_python_installs
- - in: basic_cpp
-   out: basic_cpp_with_install
-   function: update_cplusplus_installs
- - in: basic_cpp_with_include
-   out: basic_cpp_with_installed_include
-   function: update_cplusplus_installs
- - in: plugin_package
-   out: installed_library
-   functions:
-   - update_cplusplus_installs
-   - export_cplusplus_libraries
- - in: installed_library
-   out: installed_library
-   functions:
-   - update_cplusplus_installs
-   - export_cplusplus_libraries
- - in: misc_install
-   out: fixed_misc_install
-   function: update_misc_installs
- - in: fixed_misc_install
-   out: fixed_misc_install
-   function: update_misc_installs
- - in: add_misc_install
-   out: fixed_add_misc_install
-   function: update_misc_installs
- - in: add_many_misc_installs
-   out: fixed_many_misc_installs
-   function: update_misc_installs
- - in: add_misc_py_install
-   out: fixed_add_misc_py_install
-   function: update_misc_installs
- - in: add_many_misc_py_installs
-   out: fixed_many_misc_py_installs
-   function: update_misc_installs
- - in: urdf_dependencies
-   out: fixed_urdf_dependencies
-   functions:
-       - check_manifest_dependencies
-       - update_misc_installs
-   pkgs:
-       - geometry_msgs
-       - stereo_msgs
- - in: directory_install
-   out: fixed_directory_install
-   function: fix_double_directory_installs
- - in: bad_cmake_order
-   out: good_cmake_order
-   function: enforce_cmake_ordering
- - in: good_cmake_order
-   out: good_cmake_order
-   function: enforce_cmake_ordering
- - in: good_cmake_order_styled
-   out: good_cmake_order_styled
-   function: enforce_cmake_ordering
- - in: good_cmake_order
-   out: good_cmake_order_styled
-   function: enforce_cmake_ordering
-   config:
-       cmake_style: install_first
- - in: good_cmake_order_styled
-   out: good_cmake_order
-   function: enforce_cmake_ordering
-   config:
-       cmake_style: test_first
- - in: basic_cpp
-   out: fixed_name_license
-   functions:
-       - update_people
-       - update_license
-   config:
-       default_license: Proprietary
-       replace_rules:
-        - from:
-            email: dlu@todo.todo
-            name: dlu
-          to:
-            email: davidvlu@gmail.com
-            name: David V. Lu!!
- - in: basic_cpp
-   out: fixed_name_license
-   functions:
-       - update_people
-       - update_license
-   config:
-       default_license: Proprietary
-       replace_rules:
-        - from:
-            email: dlu@todo.todo
-          to:
-            email: davidvlu@gmail.com
-            name: David V. Lu!!
- - in: basic_cpp
-   out: fixed_name_license
-   functions:
-       - update_people
-       - update_license
-   config:
-       default_license: Proprietary
-       replace_rules:
-        - from:
-            name: dlu
-          to:
-            email: davidvlu@gmail.com
-            name: David V. Lu!!
- - in: missing_msg_names
-   out: fixed_msg_names
-   function: fill_in_msg_package_names
- - in: rviz_package
-   out: fixed_rviz_package
-   functions:
-       - update_misc_installs
-       - check_manifest_dependencies
-       - clean_up_rviz_configs
- - in: my_cpp_py_pkg
-   out: fixed_cpp_py_pkg
-   functions:
-     - check_manifest_dependencies
-     - check_cmake_dependencies
-     - update_cplusplus_installs
-     - export_cplusplus_libraries
-     - check_setup_py
-     - check_python_marker
-     - generate_ament_cmake_python_entry_points
-     - update_misc_installs
-     - update_python_installs
-   pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
- - in: fixed_cpp_py_pkg
-   out: fixed_cpp_py_pkg
-   functions:
-     - check_manifest_dependencies
-     - check_cmake_dependencies
-     - update_cplusplus_installs
-     - export_cplusplus_libraries
-     - check_setup_py
-     - check_python_marker
-     - generate_ament_cmake_python_entry_points
-     - update_misc_installs
-     - update_python_installs
-   pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
- - in: license_test
-   out: fixed_license_test
-   function: check_license_file
-   subpkg: minimal_package
-   config:
-       year: 2055
-       copyright_holder: Metro Robots
- - in: fixed_license_test
-   out: fixed_license_test
-   function: check_license_file
-   subpkg: minimal_package
- - in: launch_dependencies
-   out: fixed_launch_dependencies
-   function: check_manifest_dependencies
-   packages:
-   - donatello
-   - raphael
-   - leonardo
-   - michelangelo
-   - xacro
+- in: default_package
+  out: default_remove_comments
+  functions:
+  - remove_boilerplate_manifest_comments
+  - remove_boilerplate_cmake_comments
+- in: bad_tabbing
+  out: minimal_package
+  function: enforce_manifest_tabbing
+- in: bad_manifest_order
+  out: minimal_package
+  function: enforce_manifest_ordering
+- in: empty_lines
+  out: fixed_empty_lines
+  functions:
+  - remove_empty_manifest_lines
+  - remove_empty_cmake_lines
+- in: basic_cpp
+  out: basic_cpp_deps
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  pkgs: [rclcpp, std_msgs, tf2_ros]
+- in: basic_cpp_deps
+  out: basic_cpp_deps
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+- in: simple_msg
+  out: fixed_simple_msg
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+- in: fixed_simple_msg
+  out: fixed_simple_msg
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+- in: complex_interfaces
+  out: fixed_complex_interfaces
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+  - clean_whitespace_from_interface_definition
+- in: simple_gen
+  out: fixed_simple_gen
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+- in: fixed_simple_gen
+  out: fixed_simple_gen
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+- in: annoying_gen
+  out: fixed_annoying_gen
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+- in: insertion_order
+  out: fixed_insertion_order
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  pkgs: [actionlib_msgs, geometry_msgs, rclcpp, sensor_msgs, stereo_msgs]
+- in: minimal_package
+  out: minimal_package
+  function: check_includes
+- in: basic_cpp
+  out: fixed_include2
+  function: check_includes
+- in: basic_cpp_with_include
+  out: fixed_include3
+  function: check_includes
+- in: minimal_package2
+  out: minimal_package_greedy
+  function: greedy_depend_tag
+- in: minimal_package
+  out: minimal_package
+  function: greedy_depend_tag
+- in: basic_cpp
+  out: basic_cpp_catkin_libs
+  function: target_catkin_libraries
+  pkgs: [rclcpp, std_msgs, tf2_ros]
+- in: basic_cpp_catkin_libs
+  out: basic_cpp_catkin_libs
+  function: target_catkin_libraries
+- in: broken_target
+  out: basic_cpp_catkin_libs
+  function: target_catkin_libraries
+  pkgs: [rclcpp, std_msgs, tf2_ros]
+- in: plugin_package
+  out: fixed_plugins
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - update_cplusplus_installs
+  - export_cplusplus_libraries
+  - check_plugins
+  pkgs:
+  - pluginlib
+  - pluginlib_tutorials
+- in: fixed_plugins
+  out: fixed_plugins
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_plugins
+  - update_cplusplus_installs
+  - export_cplusplus_libraries
+- in: oddly_formatted_xml
+  out: oddly_formatted_xml
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_plugins
+- in: oddly_formatted_xml
+  out: fixed_plugins
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_plugins
+  - misc_xml_formatting
+- in: minimal_python
+  out: fixed_minimal_python
+  functions:
+  - check_setup_py
+  - check_python_marker
+  - update_misc_installs
+- in: fixed_minimal_python
+  out: fixed_minimal_python
+  functions:
+  - check_setup_py
+  - check_python_marker
+  - update_misc_installs
+  - update_python_installs
+- in: fixed_minimal_python
+  out: fixed_minimal_python
+  functions:
+  - check_plugins
+- in: min_py_script
+  out: fixed_min_py_script
+  functions:
+  - check_setup_py
+  - check_python_marker
+  - update_misc_installs
+  - update_python_installs
+- in: fixed_min_py_script
+  out: fixed_min_py_script
+  functions:
+  - check_setup_py
+  - check_python_marker
+  - update_misc_installs
+  - update_python_installs
+- in: py_lib
+  out: fixed_py_lib
+  functions:
+  - check_setup_py
+  - check_python_marker
+  - update_misc_installs
+  - update_python_installs
+- in: fixed_py_lib
+  out: fixed_py_lib
+  functions:
+  - check_setup_py
+  - check_python_marker
+  - update_misc_installs
+  - update_python_installs
+- in: py_src_lib
+  out: fixed_py_src_lib
+  functions:
+  - check_setup_py
+  - check_python_marker
+  - update_misc_installs
+  - update_python_installs
+- in: fixed_py_src_lib
+  out: fixed_py_src_lib
+  functions:
+  - check_setup_py
+  - check_python_marker
+  - update_misc_installs
+  - update_python_installs
+- in: basic_cpp
+  out: basic_cpp_with_install
+  function: update_cplusplus_installs
+- in: basic_cpp_with_include
+  out: basic_cpp_with_installed_include
+  function: update_cplusplus_installs
+- in: plugin_package
+  out: installed_library
+  functions:
+  - update_cplusplus_installs
+  - export_cplusplus_libraries
+- in: installed_library
+  out: installed_library
+  functions:
+  - update_cplusplus_installs
+  - export_cplusplus_libraries
+- in: misc_install
+  out: fixed_misc_install
+  function: update_misc_installs
+- in: fixed_misc_install
+  out: fixed_misc_install
+  function: update_misc_installs
+- in: add_misc_install
+  out: fixed_add_misc_install
+  function: update_misc_installs
+- in: add_many_misc_installs
+  out: fixed_many_misc_installs
+  function: update_misc_installs
+- in: add_misc_py_install
+  out: fixed_add_misc_py_install
+  function: update_misc_installs
+- in: add_many_misc_py_installs
+  out: fixed_many_misc_py_installs
+  function: update_misc_installs
+- in: urdf_dependencies
+  out: fixed_urdf_dependencies
+  functions:
+  - check_manifest_dependencies
+  - update_misc_installs
+  pkgs:
+  - geometry_msgs
+  - stereo_msgs
+- in: directory_install
+  out: fixed_directory_install
+  function: fix_double_directory_installs
+- in: bad_cmake_order
+  out: good_cmake_order
+  function: enforce_cmake_ordering
+- in: good_cmake_order
+  out: good_cmake_order
+  function: enforce_cmake_ordering
+- in: good_cmake_order_styled
+  out: good_cmake_order_styled
+  function: enforce_cmake_ordering
+- in: good_cmake_order
+  out: good_cmake_order_styled
+  function: enforce_cmake_ordering
+  config:
+    cmake_style: install_first
+- in: good_cmake_order_styled
+  out: good_cmake_order
+  function: enforce_cmake_ordering
+  config:
+    cmake_style: test_first
+- in: basic_cpp
+  out: fixed_name_license
+  functions:
+  - update_people
+  - update_license
+  config:
+    default_license: Proprietary
+    replace_rules:
+    - from:
+        email: dlu@todo.todo
+        name: dlu
+      to:
+        email: davidvlu@gmail.com
+        name: David V. Lu!!
+- in: basic_cpp
+  out: fixed_name_license
+  functions:
+  - update_people
+  - update_license
+  config:
+    default_license: Proprietary
+    replace_rules:
+    - from:
+        email: dlu@todo.todo
+      to:
+        email: davidvlu@gmail.com
+        name: David V. Lu!!
+- in: basic_cpp
+  out: fixed_name_license
+  functions:
+  - update_people
+  - update_license
+  config:
+    default_license: Proprietary
+    replace_rules:
+    - from:
+        name: dlu
+      to:
+        email: davidvlu@gmail.com
+        name: David V. Lu!!
+- in: missing_msg_names
+  out: fixed_msg_names
+  function: fill_in_msg_package_names
+- in: rviz_package
+  out: fixed_rviz_package
+  functions:
+  - update_misc_installs
+  - check_manifest_dependencies
+  - clean_up_rviz_configs
+- in: my_cpp_py_pkg
+  out: fixed_cpp_py_pkg
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - update_cplusplus_installs
+  - export_cplusplus_libraries
+  - check_setup_py
+  - check_python_marker
+  - generate_ament_cmake_python_entry_points
+  - update_misc_installs
+  - update_python_installs
+  pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
+- in: fixed_cpp_py_pkg
+  out: fixed_cpp_py_pkg
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - update_cplusplus_installs
+  - export_cplusplus_libraries
+  - check_setup_py
+  - check_python_marker
+  - generate_ament_cmake_python_entry_points
+  - update_misc_installs
+  - update_python_installs
+  pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
+- in: license_test
+  out: fixed_license_test
+  function: check_license_file
+  subpkg: minimal_package
+  config:
+    year: 2055
+    copyright_holder: Metro Robots
+- in: fixed_license_test
+  out: fixed_license_test
+  function: check_license_file
+  subpkg: minimal_package
+- in: launch_dependencies
+  out: fixed_launch_dependencies
+  function: check_manifest_dependencies
+  packages:
+  - donatello
+  - raphael
+  - leonardo
+  - michelangelo
+  - xacro
