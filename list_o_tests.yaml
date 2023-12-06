@@ -289,6 +289,10 @@
       to:
         email: davidvlu@gmail.com
         name: David V. Lu!!
+- in: basic_cpp
+  out: basic_cpp
+  functions:
+  - update_license
 - in: missing_msg_names
   out: fixed_msg_names
   function: fill_in_msg_package_names
@@ -344,3 +348,30 @@
   - leonardo
   - michelangelo
   - xacro
+- in: dwb_unstyled
+  out: dwb_styled
+  functions:
+  - alphabetize_cmake_sections
+  - prettify_catkin_package_cmd
+  - prettify_package_lists
+  - prettify_msgs_srvs
+  - prettify_installs
+  - prettify_command_groups
+- in: dwb_styled
+  out: dwb_styled
+  functions:
+  - alphabetize_cmake_sections
+  - prettify_catkin_package_cmd
+  - prettify_package_lists
+  - prettify_msgs_srvs
+  - prettify_installs
+  - prettify_command_groups
+- in: py_lib
+  out: py_lib
+  functions:
+  - alphabetize_cmake_sections
+  - prettify_catkin_package_cmd
+  - prettify_package_lists
+  - prettify_msgs_srvs
+  - prettify_installs
+  - prettify_command_groups
