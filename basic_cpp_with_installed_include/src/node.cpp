@@ -1,22 +1,22 @@
-#include <ros/ros.h>
-#include "std_msgs/String.h"
-#include <tf/tf.h> // unused, but forces the dependency
+#include <rclcpp/rclcpp.hpp>
+#include "std_msgs/msg/string.hpp"
+#include <tf2_ros/transform_listener.h>  // unused, but forces the dependency
 #include <basic_cpp_with_include/its_a_header.h>
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "talker");
-  ros::NodeHandle n;
-  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  using namespace std::chrono_literals;
+  rclcpp::init(argc, argv);
+  auto n = std::make_shared<rclcpp::Node>("roscompile");
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr chatter_pub = n->create_publisher<std_msgs::msg::String>("chatter", 1000);
 
-  ros::Rate loop_rate(10);
-  while (ros::ok())
+  while (rclcpp::ok())
   {
-    std_msgs::String msg;
-    msg.data = "roscompile rules";
-    chatter_pub.publish(msg);
-    ros::spinOnce();
-    loop_rate.sleep();
+    auto message = std_msgs::msg::String();
+    message.data = "roscompile rules";
+    chatter_pub->publish(message);
+    rclcpp::spin_some(n);
+    rclcpp::sleep_for(100ms);
   }
 
   return 0;

@@ -1,14 +1,14 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(minimal_package)
-find_package(catkin REQUIRED)
-catkin_package()
+find_package(ament_cmake REQUIRED)
 
 # This one should remove the /config
 install(DIRECTORY config
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        DESTINATION share/${PROJECT_NAME}
 )
 
 # This one should not change because of the trailing slash
 install(DIRECTORY launch/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+        DESTINATION share/${PROJECT_NAME}/launch
 )
+ament_package()

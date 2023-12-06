@@ -1,7 +1,0 @@
-cmake_minimum_required(VERSION 2.8.3)
-project(reconfig2)
-find_package(catkin REQUIRED COMPONENTS dynamic_reconfigure roscpp std_msgs)
-generate_dynamic_reconfigure_options(cfg/Reconfig.cfg)
-catkin_package(CATKIN_DEPENDS roscpp std_msgs)
-add_executable(node src/node.cpp)
-add_dependencies(node ${catkin_EXPORTED_TARGETS} ${reconfig2_EXPORTED_TARGETS})

@@ -1,4 +1,4 @@
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 #include <actionlib_msgs/GoalStatus.h>
 #include <diagnostic_msgs/KeyValue.h>
 #include <geometry_msgs/Point.h>
@@ -10,10 +10,12 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "talker");
-  while (ros::ok())
+  rclcpp::init(argc, argv);
+  auto n = std::make_shared<rclcpp::Node>("roscompile");
+
+  while (rclcpp::ok())
   {
-    ros::spinOnce();
+    rclcpp::spin_some(n);
   }
 
   return 0;

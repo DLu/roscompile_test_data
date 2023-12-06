@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
-<package>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>minimal_package</name>
   <version>0.0.0</version>
   <description>The default_package package</description>
   <maintainer email="dlu@todo.todo">dlu</maintainer>
   <license>TODO</license>
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>pluginlib</build_depend>
-  <build_depend>pluginlib_tutorials</build_depend>
-  <run_depend>pluginlib</run_depend>
-  <run_depend>pluginlib_tutorials</run_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>pluginlib</depend>
+  <depend>pluginlib_tutorials</depend>
   <export>
-    <polygon_base plugin="${prefix}/polygon_base_plugins.xml"/>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>

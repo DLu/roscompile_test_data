@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(basic_cpp_with_include)
-find_package(catkin REQUIRED)
-catkin_package()
+find_package(ament_cmake REQUIRED)
 add_executable(node src/node.cpp)
+ament_package()

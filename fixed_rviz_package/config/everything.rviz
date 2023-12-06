@@ -1,156 +1,138 @@
 Panels:
-  - Class: rviz/Displays
-    Help Height: 70
+  - Class: rviz_common/Displays
+    Help Height: 78
     Name: Displays
     Property Tree Widget:
       Expanded:
         - /Global Options1
         - /Status1
-        - /DepthCloud1/Auto Size1
-    Tree Height: 223
-  - Class: rviz/Selection
+    Tree Height: 270
+  - Class: rviz_common/Selection
     Name: Selection
-  - Class: rviz/Tool Properties
+  - Class: rviz_common/Tool Properties
     Expanded:
-      - /2D Pose Estimate1
-      - /2D Nav Goal1
+      - /2D Goal Pose1
       - /Publish Point1
     Name: Tool Properties
     Splitter Ratio: 0.5886790156364441
-  - Class: rviz/Views
+  - Class: rviz_common/Views
     Expanded:
       - /Current View1
     Name: Views
-  - Class: rviz/Time
-    Name: Time
 Visualization Manager:
   Displays:
-    - Class: rviz/Grid
+    - Class: rviz_default_plugins/Grid
       Name: Grid
       Value: true
-    - Class: rviz/AccelStamped
-      Name: AccelStamped
-      Value: true
-    - Class: rviz/Axes
+    - Class: rviz_default_plugins/Axes
       Name: Axes
       Value: true
-    - Class: rviz/Camera
+    - Class: rviz_default_plugins/Camera
       Name: Camera
       Value: true
-    - Class: rviz/DepthCloud
-      Name: DepthCloud
-      Value: true
-    - Class: rviz/Effort
-      Name: Effort
-      Value: true
-    - Class: rviz/FluidPressure
+    - Class: rviz_default_plugins/FluidPressure
       Name: FluidPressure
       Value: true
-    - Class: rviz/GridCells
+    - Class: rviz_default_plugins/GridCells
       Name: GridCells
       Value: true
-    - Class: rviz/Illuminance
+    - Class: rviz_default_plugins/Illuminance
       Name: Illuminance
       Value: true
-    - Class: rviz/Image
+    - Class: rviz_default_plugins/Image
       Name: Image
       Value: true
-    - Class: rviz/InteractiveMarkers
+    - Class: rviz_default_plugins/InteractiveMarkers
       Name: InteractiveMarkers
       Value: true
-    - Class: rviz/LaserScan
+    - Class: rviz_default_plugins/LaserScan
       Name: LaserScan
       Value: true
-    - Class: rviz/Map
+    - Class: rviz_default_plugins/Map
       Name: Map
       Value: true
-    - Class: rviz/Marker
+    - Class: rviz_default_plugins/Marker
       Name: Marker
       Value: true
-    - Class: rviz/MarkerArray
+    - Class: rviz_default_plugins/MarkerArray
       Name: MarkerArray
       Value: true
-    - Class: rviz/Odometry
+    - Class: rviz_default_plugins/Odometry
       Name: Odometry
       Value: true
-    - Class: rviz/Path
+    - Class: rviz_default_plugins/Path
       Name: Path
       Value: true
-    - Class: rviz/PointCloud
+    - Class: rviz_default_plugins/PointCloud
       Name: PointCloud
       Value: true
-    - Class: rviz/PointCloud2
+    - Class: rviz_default_plugins/PointCloud2
       Name: PointCloud2
       Value: true
-    - Class: rviz/PointStamped
+    - Class: rviz_default_plugins/PointStamped
       Name: PointStamped
       Value: true
-    - Class: rviz/Polygon
+    - Class: rviz_default_plugins/Polygon
       Name: Polygon
       Value: true
-    - Class: rviz/Pose
+    - Class: rviz_default_plugins/Pose
       Name: Pose
       Value: true
-    - Class: rviz/PoseArray
+    - Class: rviz_default_plugins/PoseArray
       Name: PoseArray
       Value: true
-    - Class: rviz/PoseWithCovariance
+    - Class: rviz_default_plugins/PoseWithCovariance
       Name: PoseWithCovariance
       Value: true
-    - Class: rviz/Range
+    - Class: rviz_default_plugins/Range
       Name: Range
       Value: true
-    - Class: rviz/RelativeHumidity
+    - Class: rviz_default_plugins/RelativeHumidity
       Name: RelativeHumidity
       Value: true
-    - Class: rviz/RobotModel
+    - Class: rviz_default_plugins/RobotModel
       Name: RobotModel
       Value: true
-    - Class: rviz/TF
+    - Class: rviz_default_plugins/TF
       Name: TF
       Value: true
-    - Class: rviz/Temperature
+    - Class: rviz_default_plugins/Temperature
       Name: Temperature
       Value: true
-    - Class: rviz/TwistStamped
-      Name: TwistStamped
-      Value: true
-    - Class: rviz/WrenchStamped
-      Name: WrenchStamped
+    - Class: rviz_default_plugins/Wrench
+      Name: Wrench
       Value: true
   Enabled: true
   Global Options:
     Fixed Frame: map
   Tools:
-    - Class: rviz/Interact
-    - Class: rviz/MoveCamera
-    - Class: rviz/Select
-    - Class: rviz/FocusCamera
-    - Class: rviz/Measure
-    - Class: rviz/SetInitialPose
-    - Class: rviz/SetGoal
-    - Class: rviz/PublishPoint
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+    - Class: rviz_default_plugins/SetInitialPose
+    - Class: rviz_default_plugins/SetGoal
+    - Class: rviz_default_plugins/PublishPoint
   Value: true
   Views:
     Current:
-      Class: rviz/XYOrbit
+      Class: rviz_default_plugins/Orbit
       Name: Current View
     Saved:
-      - Class: rviz/FPS
-        Name: FPS
-      - Class: rviz/Orbit
+      - Class: rviz_default_plugins/Orbit
         Name: Orbit
-      - Class: rviz/FrameAligned
-        Name: FrameAligned
-      - Class: rviz/ThirdPersonFollower
+      - Class: rviz_default_plugins/FPS
+        Name: FPS
+      - Class: rviz_default_plugins/ThirdPersonFollower
         Name: ThirdPersonFollower
-      - Class: rviz/TopDownOrtho
+      - Class: rviz_default_plugins/TopDownOrtho
         Name: TopDownOrtho
-      - Class: rviz/XYOrbit
+      - Class: rviz_default_plugins/XYOrbit
         Name: XYOrbit
 Window Geometry:
   Height: 846
-  QMainWindow State: 000000ff00000000fd000000040000000000000156000002b0fc020000000afb0000001200530065006c0065006300740069006f006e000000003d0000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d00000162000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006101000001a5000000860000001600fffffffb0000000a0049006d0061006700650100000231000000bc0000001600ffffff000000010000010f000002b0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000002b0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004f30000003efc0100000002fb0000000800540069006d00650100000000000004f3000002eb00fffffffb0000000800540069006d0065010000000000000450000000000000000000000282000002b000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
-  Width: 1267
-  X: 60
-  Y: 0
+  QMainWindow State: 000000ff00000000fd000000040000000000000156000002f4fc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d00000199000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006101000001dc0000008e0000002800fffffffb0000000a0049006d0061006700650100000270000000c10000002800ffffff000000010000010f000002f4fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000002f4000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004420000003efc0100000002fb0000000800540069006d00650100000000000004420000000000000000fb0000000800540069006d006501000000000000045000000000000000000000023f000002f400000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Width: 1200
+  X: 1424
+  Y: 172

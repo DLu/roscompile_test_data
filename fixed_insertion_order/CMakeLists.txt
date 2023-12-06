@@ -1,7 +1,13 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(minimal_package)
-find_package(catkin REQUIRED COMPONENTS actionlib_msgs diagnostic_msgs geometry_msgs nav_msgs roscpp sensor_msgs shape_msgs stereo_msgs)
-catkin_package(
-    CATKIN_DEPENDS actionlib_msgs diagnostic_msgs geometry_msgs nav_msgs roscpp sensor_msgs shape_msgs stereo_msgs
-)
+find_package(ament_cmake REQUIRED)
+find_package(actionlib_msgs REQUIRED)
+find_package(diagnostic_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(shape_msgs REQUIRED)
+find_package(stereo_msgs REQUIRED)
 add_executable(node src/node.cpp)
+ament_package()

@@ -1,13 +1,13 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(minimal_package)
-find_package(catkin REQUIRED)
-catkin_package()
+find_package(ament_cmake REQUIRED)
 install(FILES c3po.urdf core.launch
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
+        DESTINATION share/${PROJECT_NAME}
 )
 install(FILES launch/test.launch
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+        DESTINATION share/${PROJECT_NAME}/launch
 )
 install(FILES urdf/r2d2.urdf
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+        DESTINATION share/${PROJECT_NAME}/urdf
 )
+ament_package()

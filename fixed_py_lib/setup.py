@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
-from catkin_pkg.python_setup import generate_distutils_setup
+from setuptools import setup
 
-package_info = generate_distutils_setup(
-    packages=['py_lib'],
-    package_dir={'': 'src'},
+package_name = 'min_py_lib'
+
+setup(
+    name=package_name,
+    data_files=[
+        ('share/' + package_name, ['package.xml']),
+        ('share/ament_index/resource_index/packages', ['resource/min_py_lib']),
+    ],
+    packages=[package_name],
+    entry_points={'console_scripts': ['rex = min_py_lib.rex:main']},
 )
-
-setup(**package_info)

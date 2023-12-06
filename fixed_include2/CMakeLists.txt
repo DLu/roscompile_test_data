@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(minimal_package)
-find_package(catkin REQUIRED)
-catkin_package()
-include_directories(${catkin_INCLUDE_DIRS})
+find_package(ament_cmake REQUIRED)
 add_executable(node src/node.cpp)
+target_include_directories(node PUBLIC
+  $<INSTALL_INTERFACE:include>
+)
+ament_package()

@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(minimal_package)
-find_package(catkin REQUIRED COMPONENTS diagnostic_msgs nav_msgs shape_msgs)
-catkin_package(
-    CATKIN_DEPENDS diagnostic_msgs nav_msgs shape_msgs
-)
+find_package(ament_cmake REQUIRED)
+find_package(diagnostic_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(shape_msgs REQUIRED)
 add_executable(node src/node.cpp)
+ament_package()

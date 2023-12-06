@@ -1,8 +1,10 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(simple_msg)
 
-find_package(catkin REQUIRED COMPONENTS geometry_msgs message_generation)
-add_service_files(FILES Simple.srv)
-generate_messages(DEPENDENCIES geometry_msgs)
+find_package(ament_cmake REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+rosidl_generate_interfaces(${PROJECT_NAME} srv/Simple.srv DEPENDENCIES geometry_msgs)
+ament_export_dependencies(rosidl_default_runtime)
 
-catkin_package(CATKIN_DEPENDS geometry_msgs message_runtime)
+ament_package()
