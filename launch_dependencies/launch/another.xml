@@ -1,0 +1,4 @@
+<launch>
+    <param command="rosrun xacro xacro.py xacrofile.xacro" />
+    <include file="$(find donatello)/launch/05-arg.launch" />
+</launch>

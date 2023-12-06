@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="michelangelo" type="michelangelo" name="michelangelo" />
+  <test test-name="test_mynode" pkg="minimal_package" type="test_mynode" />
+</launch>

@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(minimal_package)
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
+endif()
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set_directory_properties(PROPERTIES COMPILE_OPTIONS "-std=c++11;-Wall;-Werror")
 find_package(catkin REQUIRED)
 catkin_python_setup()
@@ -24,8 +28,8 @@ install()
 catkin_install_python()
 
 if(CATKIN_ENABLE_TESTING)
-  find_package(rostest REQUIRED)
   find_package(catkin REQUIRED COMPONENTS roslint)
+  find_package(rostest REQUIRED)
 
   add_executable(etest test/etest.cpp)
   target_link_libraries(etest ${GTEST_LIBRARIES})
@@ -36,4 +40,5 @@ if(CATKIN_ENABLE_TESTING)
 
   catkin_add_gtest(vtest test/vtest.cpp)
 endif()
+some_bizzare_command()
 

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(minimal_package)
+find_package(catkin REQUIRED COMPONENTS pluginlib pluginlib_tutorials)
+catkin_package(CATKIN_DEPENDS pluginlib pluginlib_tutorials)
+add_library(the_library src/my_plugin.cpp)
+add_library(the_other_library src/my_other_plugin.cpp)

@@ -28,11 +28,17 @@
   functions:
   - check_manifest_dependencies
   - check_cmake_dependencies
+  pkgs:
+  - tf
+  - std_msgs
 - in: basic_cpp_deps
   out: basic_cpp_deps
   functions:
   - check_manifest_dependencies
   - check_cmake_dependencies
+- in: simple_msg_with_whitespace
+  out: simple_msg
+  function: clean_whitespace_from_interface_definition
 - in: simple_msg
   out: fixed_simple_msg
   functions:
@@ -68,6 +74,11 @@
   functions:
   - check_manifest_dependencies
   - check_cmake_dependencies
+  pkgs:
+  - actionlib_msgs
+  - geometry_msgs
+  - sensor_msgs
+  - stereo_msgs
 - in: minimal_package
   out: fixed_include
   function: check_includes
@@ -112,6 +123,9 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   - check_plugins
+  pkgs:
+  - pluginlib
+  - pluginlib_tutorials
 - in: fixed_plugins
   out: fixed_plugins
   functions:
@@ -131,9 +145,21 @@
   - check_cmake_dependencies
   - check_plugins
   - misc_xml_formatting
+- in: multi_plugin
+  out: fixed_multi_plugin
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_plugins
+  pkgs:
+  - pluginlib
+  - pluginlib_tutorials
+  - dwb_local_planner
 - in: basic_cpp
   out: fixed_message_dep
   function: check_exported_dependencies
+  msgs:
+  - std_msgs/String
 - in: basic_cpp_no_msg
   out: basic_cpp_no_msg
   function: check_exported_dependencies
@@ -142,6 +168,8 @@
   functions:
   - check_generators
   - check_exported_dependencies
+  msgs:
+  - std_msgs/String
 - in: simple_msg_lib
   out: fixed_simple_msg_lib
   function: check_exported_dependencies
@@ -163,6 +191,9 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   - update_python_installs
+  pkgs:
+  - geometry_msgs
+  - rospy
 - in: fixed_minimal_python
   out: fixed_minimal_python
   functions:
@@ -190,6 +221,10 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   - check_exported_dependencies
+  pkgs:
+  - std_msgs
+  msgs:
+  - std_msgs/String
 - in: basic_cpp
   out: basic_cpp_with_install
   function: update_cplusplus_installs
@@ -207,6 +242,12 @@
   function: update_misc_installs
 - in: missing_slash_misc_install
   out: fixed_misc_install
+  function: update_misc_installs
+- in: undo_misc_install
+  out: fixed_undo_misc_install
+  function: update_misc_installs
+- in: no_misc_install
+  out: fixed_no_misc_install
   function: update_misc_installs
 - in: urdf_dependencies
   out: fixed_urdf_dependencies
@@ -295,3 +336,22 @@
   - update_misc_installs
   - check_manifest_dependencies
   - clean_up_rviz_configs
+- in: launch_dependencies
+  out: fixed_launch_dependencies
+  function: check_manifest_dependencies
+  packages:
+  - donatello
+  - raphael
+  - leonardo
+  - michelangelo
+  - xacro
+- in: dwb_unstyled
+  out: dwb_styled
+  functions:
+  - alphabetize_cmake_sections
+  - prettify_catkin_package_cmd
+  - prettify_package_lists
+  - prettify_installs
+  - prettify_command_groups
+  - prettify_msgs_srvs
+  - enforce_manifest_tabbing

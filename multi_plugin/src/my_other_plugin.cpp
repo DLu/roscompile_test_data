@@ -1,0 +1,1 @@
+PLUGINLIB_EXPORT_CLASS(dwb_critics::GoalDistCritic, dwb_local_planner::TrajectoryCritic)

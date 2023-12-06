@@ -29,7 +29,6 @@ Visualization Manager:
       Value: true
     - Class: rviz_plugin_tutorials/Imu
       Name: Imu
-      Topic: ""
       Value: true
   Enabled: true
   Global Options:
