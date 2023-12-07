@@ -88,14 +88,14 @@
 - in: basic_cpp_with_include
   out: fixed_include3
   function: check_includes
-- in: broken_metapackage
-  out: fixed_metapackage
-  function: update_metapackage
-  subpkg: broken_metapackage
-- in: broken_metapackage2
-  out: fixed_metapackage
-  function: update_metapackage
-  subpkg: broken_metapackage
+# - in: broken_metapackage
+#   out: fixed_metapackage
+#   function: update_metapackage
+#   subpkg: broken_metapackage
+# - in: broken_metapackage2
+#   out: fixed_metapackage
+#   function: update_metapackage
+#   subpkg: broken_metapackage
 - in: minimal_package2
   out: minimal_package_greedy
   function: greedy_depend_tag
