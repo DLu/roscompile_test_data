@@ -11,6 +11,9 @@ add_executable(node src/node.cpp)
 install(TARGETS node
         DESTINATION lib/${PROJECT_NAME}
 )
+install(FILES resource/my_cpp_py_pkg
+        DESTINATION share/${PROJECT_NAME}/resource
+)
 install(PROGRAMS scripts/cursive scripts/pilot.py scripts/rex
         DESTINATION lib/${PROJECT_NAME}
 )
