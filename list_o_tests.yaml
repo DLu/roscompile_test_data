@@ -20,18 +20,7 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   pkgs: [rclcpp, std_msgs, tf2_ros]
-- in: basic_cpp_deps
-  out: basic_cpp_deps
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
 - in: simple_msg
-  out: fixed_simple_msg
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - check_generators
-- in: fixed_simple_msg
   out: fixed_simple_msg
   functions:
   - check_manifest_dependencies
@@ -50,12 +39,6 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   - check_generators
-- in: fixed_simple_gen
-  out: fixed_simple_gen
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - check_generators
 - in: annoying_gen
   out: fixed_annoying_gen
   functions:
@@ -68,9 +51,6 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   pkgs: [actionlib_msgs, geometry_msgs, rclcpp, sensor_msgs, stereo_msgs]
-- in: minimal_package
-  out: minimal_package
-  function: check_includes
 - in: basic_cpp
   out: fixed_include2
   function: check_includes
@@ -80,16 +60,10 @@
 - in: minimal_package2
   out: minimal_package_greedy
   function: greedy_depend_tag
-- in: minimal_package
-  out: minimal_package
-  function: greedy_depend_tag
 - in: basic_cpp
   out: basic_cpp_catkin_libs
   function: target_catkin_libraries
   pkgs: [rclcpp, std_msgs, tf2_ros]
-- in: basic_cpp_catkin_libs
-  out: basic_cpp_catkin_libs
-  function: target_catkin_libraries
 - in: broken_target
   out: basic_cpp_catkin_libs
   function: target_catkin_libraries
@@ -105,20 +79,6 @@
   pkgs:
   - pluginlib
   - pluginlib_tutorials
-- in: fixed_plugins
-  out: fixed_plugins
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - check_plugins
-  - update_cplusplus_installs
-  - export_cplusplus_libraries
-- in: oddly_formatted_xml
-  out: oddly_formatted_xml
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - check_plugins
 - in: oddly_formatted_xml
   out: fixed_plugins
   functions:
@@ -132,25 +92,7 @@
   - check_setup_py
   - check_python_marker
   - update_misc_installs
-- in: fixed_minimal_python
-  out: fixed_minimal_python
-  functions:
-  - check_setup_py
-  - check_python_marker
-  - update_misc_installs
-  - update_python_installs
-- in: fixed_minimal_python
-  out: fixed_minimal_python
-  functions:
-  - check_plugins
 - in: min_py_script
-  out: fixed_min_py_script
-  functions:
-  - check_setup_py
-  - check_python_marker
-  - update_misc_installs
-  - update_python_installs
-- in: fixed_min_py_script
   out: fixed_min_py_script
   functions:
   - check_setup_py
@@ -164,21 +106,7 @@
   - check_python_marker
   - update_misc_installs
   - update_python_installs
-- in: fixed_py_lib
-  out: fixed_py_lib
-  functions:
-  - check_setup_py
-  - check_python_marker
-  - update_misc_installs
-  - update_python_installs
 - in: py_src_lib
-  out: fixed_py_src_lib
-  functions:
-  - check_setup_py
-  - check_python_marker
-  - update_misc_installs
-  - update_python_installs
-- in: fixed_py_src_lib
   out: fixed_py_src_lib
   functions:
   - check_setup_py
@@ -196,15 +124,7 @@
   functions:
   - update_cplusplus_installs
   - export_cplusplus_libraries
-- in: installed_library
-  out: installed_library
-  functions:
-  - update_cplusplus_installs
-  - export_cplusplus_libraries
 - in: misc_install
-  out: fixed_misc_install
-  function: update_misc_installs
-- in: fixed_misc_install
   out: fixed_misc_install
   function: update_misc_installs
 - in: add_misc_install
@@ -232,12 +152,6 @@
   function: fix_double_directory_installs
 - in: bad_cmake_order
   out: good_cmake_order
-  function: enforce_cmake_ordering
-- in: good_cmake_order
-  out: good_cmake_order
-  function: enforce_cmake_ordering
-- in: good_cmake_order_styled
-  out: good_cmake_order_styled
   function: enforce_cmake_ordering
 - in: good_cmake_order
   out: good_cmake_order_styled
@@ -289,10 +203,6 @@
       to:
         email: davidvlu@gmail.com
         name: David V. Lu!!
-- in: basic_cpp
-  out: basic_cpp
-  functions:
-  - update_license
 - in: missing_msg_names
   out: fixed_msg_names
   function: fill_in_msg_package_names
@@ -303,19 +213,6 @@
   - check_manifest_dependencies
   - clean_up_rviz_configs
 - in: my_cpp_py_pkg
-  out: fixed_cpp_py_pkg
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - update_cplusplus_installs
-  - export_cplusplus_libraries
-  - check_setup_py
-  - check_python_marker
-  - generate_ament_cmake_python_entry_points
-  - update_misc_installs
-  - update_python_installs
-  pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
-- in: fixed_cpp_py_pkg
   out: fixed_cpp_py_pkg
   functions:
   - check_manifest_dependencies
@@ -350,24 +247,6 @@
   - xacro
 - in: dwb_unstyled
   out: dwb_styled
-  functions:
-  - alphabetize_cmake_sections
-  - prettify_catkin_package_cmd
-  - prettify_package_lists
-  - prettify_msgs_srvs
-  - prettify_installs
-  - prettify_command_groups
-- in: dwb_styled
-  out: dwb_styled
-  functions:
-  - alphabetize_cmake_sections
-  - prettify_catkin_package_cmd
-  - prettify_package_lists
-  - prettify_msgs_srvs
-  - prettify_installs
-  - prettify_command_groups
-- in: py_lib
-  out: py_lib
   functions:
   - alphabetize_cmake_sections
   - prettify_catkin_package_cmd
