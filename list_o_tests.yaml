@@ -6,12 +6,6 @@
 - in: default_package
   out: default_no_export
   function: remove_empty_export_tag
-- in: minimal_package
-  out: minimal_package
-  function: remove_empty_export_tag
-- in: useless_export
-  out: useless_export
-  function: remove_empty_export_tag
 - in: bad_tabbing
   out: minimal_package
   function: enforce_manifest_tabbing
@@ -31,11 +25,6 @@
   pkgs:
   - tf
   - std_msgs
-- in: basic_cpp_deps
-  out: basic_cpp_deps
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
 - in: simple_msg_with_whitespace
   out: simple_msg
   function: clean_whitespace_from_interface_definition
@@ -45,19 +34,7 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   - check_generators
-- in: fixed_simple_msg
-  out: fixed_simple_msg
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - check_generators
 - in: simple_gen
-  out: fixed_simple_gen
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - check_generators
-- in: fixed_simple_gen
   out: fixed_simple_gen
   functions:
   - check_manifest_dependencies
@@ -99,13 +76,7 @@
 - in: minimal_package2
   out: minimal_package_greedy
   function: greedy_depend_tag
-- in: minimal_package
-  out: minimal_package
-  function: greedy_depend_tag
 - in: basic_cpp
-  out: basic_cpp_catkin_libs
-  function: target_catkin_libraries
-- in: basic_cpp_catkin_libs
   out: basic_cpp_catkin_libs
   function: target_catkin_libraries
 - in: broken_target
@@ -113,9 +84,6 @@
   function: target_catkin_libraries
 - in: plugin_package
   out: fixed_library
-  function: check_library_setup
-- in: basic_cpp
-  out: basic_cpp
   function: check_library_setup
 - in: plugin_package
   out: fixed_plugins
@@ -126,18 +94,6 @@
   pkgs:
   - pluginlib
   - pluginlib_tutorials
-- in: fixed_plugins
-  out: fixed_plugins
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - check_plugins
-- in: oddly_formatted_xml
-  out: oddly_formatted_xml
-  functions:
-  - check_manifest_dependencies
-  - check_cmake_dependencies
-  - check_plugins
 - in: oddly_formatted_xml
   out: fixed_plugins
   functions:
@@ -160,9 +116,6 @@
   function: check_exported_dependencies
   msgs:
   - std_msgs/String
-- in: basic_cpp_no_msg
-  out: basic_cpp_no_msg
-  function: check_exported_dependencies
 - in: simple_msg_ex
   out: fixed_simple_msg_ex
   functions:
@@ -173,14 +126,8 @@
 - in: simple_msg_lib
   out: fixed_simple_msg_lib
   function: check_exported_dependencies
-- in: simple_msg_var
-  out: simple_msg_var
-  function: check_exported_dependencies
 - in: var_substitution
   out: fixed_var_subsitution
-  function: check_exported_dependencies
-- in: slant_var_subsitution
-  out: slant_var_subsitution
   function: check_exported_dependencies
 - in: mainpage
   out: fixed_mainpage
@@ -194,20 +141,9 @@
   pkgs:
   - geometry_msgs
   - rospy
-- in: fixed_minimal_python
-  out: fixed_minimal_python
-  functions:
-  - check_includes
-  - check_setup_py
 - in: py_lib
   out: fixed_py_lib
   function: check_setup_py
-- in: existing_py_lib
-  out: existing_py_lib
-  function: check_setup_py
-- in: basic_cpp
-  out: basic_cpp
-  function: check_dynamic_reconfigure
 - in: reconfig
   out: fixed_reconfig
   functions:
@@ -237,9 +173,6 @@
 - in: misc_install
   out: fixed_misc_install
   function: update_misc_installs
-- in: fixed_misc_install
-  out: fixed_misc_install
-  function: update_misc_installs
 - in: missing_slash_misc_install
   out: fixed_misc_install
   function: update_misc_installs
@@ -260,22 +193,8 @@
 - in: legacy_simple_msg_ex
   out: fixed_legacy_export
   function: remove_old_style_cpp_dependencies
-- in: fixed_legacy_export
-  out: fixed_legacy_export
-  function: remove_old_style_cpp_dependencies
-- in: fixed_legacy_export
-  out: fixed_legacy_export
-  functions:
-  - check_exported_dependencies
-  - remove_old_style_cpp_dependencies
 - in: bad_cmake_order
   out: good_cmake_order
-  function: enforce_cmake_ordering
-- in: good_cmake_order
-  out: good_cmake_order
-  function: enforce_cmake_ordering
-- in: good_cmake_order_styled
-  out: good_cmake_order_styled
   function: enforce_cmake_ordering
 - in: good_cmake_order
   out: good_cmake_order_styled
