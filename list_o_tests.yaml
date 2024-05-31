@@ -99,11 +99,25 @@
   - check_python_marker
   - update_misc_installs
   - update_python_installs
+  - generate_ament_cmake_python_entry_points
+  - sync_package_xml_and_setup_py
+- in: min_py_script2
+  out: fixed_min_py_script2
+  functions:
+  - sync_package_xml_and_setup_py
 - in: py_lib
   out: fixed_py_lib
   functions:
   - check_setup_py
   - check_python_marker
+  - update_misc_installs
+  - update_python_installs
+- in: py_lib2
+  out: fixed_py_lib2
+  functions:
+  - check_python_marker
+  - check_setup_py
+  - sync_package_xml_and_setup_py
   - update_misc_installs
   - update_python_installs
 - in: py_src_lib
@@ -243,6 +257,14 @@
   - update_misc_installs
   - update_python_installs
   pkgs: [rclcpp, rclpy, geometry_msgs, std_msgs, tf2_ros]
+- in: basic_cpp
+  out: basic_cpp
+  functions:
+  - check_python_marker
+  - generate_ament_cmake_python_entry_points
+  - sync_package_xml_and_setup_py
+  - check_setup_py
+  - update_python_installs
 # - in: license_test
 #   out: fixed_license_test
 #   function: check_license_file
