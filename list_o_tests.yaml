@@ -113,6 +113,24 @@
   - check_python_marker
   - update_misc_installs
   - update_python_installs
+- in: fixed_py_src_lib
+  out: fixed_py_src_lib
+  functions:
+  - remove_empty_cmake_lines
+  - remove_boilerplate_cmake_comments
+  - check_cmake_dependencies
+  - check_generators
+  - check_includes
+  - target_catkin_libraries
+  - check_library_setup
+  - check_exported_dependencies
+  - remove_old_style_cpp_dependencies
+  - enforce_cmake_ordering
+  - alphabetize_cmake_sections
+  - prettify_catkin_package_cmd
+  - prettify_msgs_srvs
+  - prettify_installs
+  - prettify_command_groups
 - in: basic_cpp
   out: basic_cpp_with_install
   function: update_cplusplus_installs
