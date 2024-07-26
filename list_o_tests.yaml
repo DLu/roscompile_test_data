@@ -34,6 +34,22 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   - check_generators
+  - greedy_depend_tag
+- in: simple_msg2
+  out: fixed_simple_msg2
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+  - greedy_depend_tag
+- in: simple_msg2
+  out: fixed_simple_msg2a
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+  - greedy_depend_tag
+  config: {prefer_depend_tag: True}
 - in: simple_gen
   out: fixed_simple_gen
   functions:
@@ -56,6 +72,18 @@
   - geometry_msgs
   - sensor_msgs
   - stereo_msgs
+  config: {'prefer_depend_tag': False}
+- in: insertion_order
+  out: fixed_insertion_order
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  pkgs:
+  - actionlib_msgs
+  - geometry_msgs
+  - sensor_msgs
+  - stereo_msgs
+  config: {prefer_depend_tag: True}
 - in: minimal_package
   out: fixed_include
   function: check_includes
@@ -76,6 +104,9 @@
 - in: minimal_package2
   out: minimal_package_greedy
   function: greedy_depend_tag
+- in: minimal_package2
+  out: minimal_package2
+  function: check_manifest_dependencies
 - in: basic_cpp
   out: basic_cpp_catkin_libs
   function: target_catkin_libraries
@@ -101,6 +132,9 @@
   - check_cmake_dependencies
   - check_plugins
   - misc_xml_formatting
+- in: fixed_plugins
+  out: fixed_plugins
+  function: remove_empty_export_tag
 - in: multi_plugin
   out: fixed_multi_plugin
   functions:
