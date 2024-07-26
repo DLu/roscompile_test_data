@@ -20,18 +20,37 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   pkgs: [rclcpp, std_msgs, tf2_ros]
+  config: {prefer_depend_tag: False}
+- in: basic_cpp
+  out: basic_cpp_deps
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  pkgs: [rclcpp, std_msgs, tf2_ros]
+  config: {prefer_depend_tag: True}
 - in: simple_msg
   out: fixed_simple_msg
   functions:
   - check_manifest_dependencies
   - check_cmake_dependencies
   - check_generators
+  - greedy_depend_tag
+  config: {prefer_depend_tag: False}
+- in: simple_msg
+  out: fixed_simple_msg2
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  - check_generators
+  - greedy_depend_tag
+  config: {prefer_depend_tag: True}
 - in: complex_interfaces
   out: fixed_complex_interfaces
   functions:
   - check_manifest_dependencies
   - check_cmake_dependencies
   - check_generators
+  - greedy_depend_tag
   - clean_whitespace_from_interface_definition
 - in: simple_gen
   out: fixed_simple_gen
@@ -51,6 +70,14 @@
   - check_manifest_dependencies
   - check_cmake_dependencies
   pkgs: [actionlib_msgs, geometry_msgs, rclcpp, sensor_msgs, stereo_msgs]
+  config: {prefer_depend_tag: False}
+- in: insertion_order
+  out: fixed_insertion_order
+  functions:
+  - check_manifest_dependencies
+  - check_cmake_dependencies
+  pkgs: [actionlib_msgs, geometry_msgs, rclcpp, sensor_msgs, stereo_msgs]
+  config: {prefer_depend_tag: True}
 - in: basic_cpp
   out: fixed_include2
   function: check_includes
